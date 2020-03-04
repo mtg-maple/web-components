@@ -1,0 +1,39 @@
+{
+  "name": "mapleweb-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook",
+    "predeploy": "build-storybook",
+    "deploy": "gh-pages -d storybook-static",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtg-maple/web-components.git"
+  },
+  "author": "MAPLE",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/mtg-maple/web-components/issues"
+  },
+  "homepage": "https://github.com/mtg-maple/web-components#readme",
+  "devDependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.8.6",
+    "@babel/preset-env": "7.8.6",
+    "@babel/preset-react": "7.8.3",
+    "@storybook/react": "5.3.14",
+    "@types/jest": "25.1.3",
+    "@types/node": "13.7.7",
+    "@types/react": "16.9.23",
+    "@types/react-dom": "16.9.5",
+    "babel-loader": "8.0.6",
+    "gh-pages": "2.2.0",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
+    "ts-loader": "6.2.1",
+    "typescript": "3.8.3"
+  }
+}
