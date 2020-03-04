@@ -4,3 +4,4 @@ src
 .gitignore
 webpack.config.js
 tsconfig.json
+storybook-static
