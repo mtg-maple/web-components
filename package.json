@@ -1,12 +1,14 @@
 {
-  "name": "mapleweb-components",
-  "version": "1.0.0",
+  "name": "@mtg-maple/web-components",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "storybook": "start-storybook",
     "predeploy": "build-storybook",
     "deploy": "gh-pages -d storybook-static",
+    "transpile": "tsc",
+    "prepublishOnly": "yarn transpile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -35,5 +37,9 @@
     "react-dom": "16.13.0",
     "ts-loader": "6.2.1",
     "typescript": "3.8.3"
+  },
+  "peerDependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   }
 }

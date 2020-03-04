@@ -17,9 +17,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react",
-    "sourceMap": true
+    "sourceMap": true,
+    "outDir": "./dist/"
   },
   "include": [
-    "src"
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/*.stories.tsx"
   ]
 }
