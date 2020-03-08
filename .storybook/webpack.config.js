@@ -6,7 +6,30 @@ function resolve(dir) {
 
 module.exports = ({ config }) => {
   config.resolve.extensions.push('.ts', '.tsx');
-  config.module.rules.push({ test: /\.tsx?$/, loader: 'ts-loader' });
+
+  config.module.rules.push({
+    test: /\.stories.\.tsx?$/,
+    exclude: /node_modules/,
+    use: [
+      {
+        loader: require.resolve('@storybook/source-loader'),
+        options: { injectParameters: true },
+      },
+    ],
+    include: [resolve('src')],
+    enforce: 'pre',
+  });
+
+  config.module.rules.push({
+    test: /\.tsx?$/,
+    exclude: /node_modules/,
+    use: [
+      'ts-loader',
+      {
+        loader: require.resolve('react-docgen-typescript-loader'),
+      },
+    ],
+  });
 
   config.module.rules.push({
     test: /\.scss$/,
