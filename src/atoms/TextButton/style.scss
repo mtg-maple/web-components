@@ -1,0 +1,65 @@
+.textButton {
+    height: 2rem;
+    padding: calc(.5rem - 3px) calc(2rem - 3px);
+    border-radius: 1rem;
+    border: 3px solid transparent;
+
+    font-size: .75rem;
+    line-height: 1rem;
+    text-align: center;
+    font-family: $defaultFontFamily;
+    font-style: normal;
+    font-weight: bold;
+
+    transition: all ease-in-out 150ms;
+}
+
+.textButton.grow {
+    width: 100%;
+}
+
+.textButton:focus {
+    outline: 0;
+}
+
+.textButton:not(:disabled):hover {
+    cursor: pointer;
+}
+
+.textButton.primary {
+    background-color: $primaryColor;
+    color: $textColor;
+}
+
+.textButton.textButton.primary:not(:disabled):hover {
+    background-color: $primaryDarkColor;
+}
+
+.textButton.primary:not(:disabled):focus {
+    background-color: $primaryDarkColor;
+    border-color: $primaryLightColor;
+}
+
+.textButton.primary:disabled {
+    background-color: $primaryLightColor;
+    color: rgba($textColor, .5);
+}
+
+.textButton.secondary {
+    background-color: $secondaryColor;
+    color: $textColor;
+}
+
+.textButton.secondary:not(:disabled):hover {
+    background-color: $secondaryDarkColor;
+}
+
+.textButton.secondary:not(:disabled):focus {
+    background-color: $secondaryDarkColor;
+    border-color: $secondaryLightColor;
+}
+
+.textButton.secondary:disabled {
+    background-color: $secondaryLightColor;
+    color: rgba($textColor, .5);
+}
