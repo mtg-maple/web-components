@@ -1,0 +1,32 @@
+.description {
+  width: 100%;
+}
+
+.description.regular {
+  font-size: 1rem;
+}
+
+.description.small {
+  font-size: 0.75rem;
+}
+
+.description.text {
+  color: $textColor;
+}
+
+.description.muteText {
+  color: $muteTextColor;
+}
+
+.description.singleLine {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description.multipleLine {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; // will be overwritten by inline style
+  overflow: hidden;
+}
