@@ -15,7 +15,10 @@ export type HeadingProps = {
   /**
    * Level of heading
    * 
-   * type HeadingLevel = '1' | '2' | '3' | '4' | '5' | '6'
+   * ```
+   * '1' | '2' | '3' | '4' | '5' | '6'
+   * ```
+   * 
    * @default '1'
    */
   level?: HeadingLevel;
@@ -23,7 +26,9 @@ export type HeadingProps = {
   /**
    * Color of heading
    * 
-   * type HeadingTextColor = 'text' | 'muteText'
+   * ```
+   * 'text' | 'muteText'
+   * ```
    * @default 'text'
    */
   color?: HeadingTextColor;
@@ -34,7 +39,7 @@ export type HeadingProps = {
 export type HeadingPresenterProps = {
   children: ReactNode;
   tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  color: 'text' | 'muteText';
+  color: HeadingTextColor;
   classNames: string[];
 }
 
@@ -79,7 +84,7 @@ export const HeadingContainer = (presenter: (props: HeadingPresenterProps) => Re
   return presenter(presenterProps);
 }
 
-const Heading: React.FC<HeadingProps>  = (props: HeadingProps): ReactElement => {
+const Heading = (props: HeadingProps): ReactElement => {
   return containPresenter<HeadingProps, HeadingPresenterProps>(HeadingContainer, HeadingPresenter)(props);
 }
 
