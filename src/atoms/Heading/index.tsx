@@ -1,36 +1,82 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, ReactElement } from 'react';
 
-import style from './style.scss';
+import { containPresenter } from '../../utils';
+import styles from './style.scss';
 
-export interface HeadingProps {
-    /**
-     * Child node of h1/h2/h3 tag
-     */
-    children: ReactNode;
+export type HeadingLevel = '1' | '2' | '3' | '4' | '5' | '6';
+export type TextColor = 'text' | 'muteText';
 
-    /**
-     * Level of heading
-     * @default '1'
-     */
-    level?: '1' | '2' | '3';
+export type HeadingProps = {
+  /**
+   * Child node of h1/h2/h3 tag
+   */
+  children?: ReactNode;
 
-    /**
-     * Color of heading
-     * @default 'text'
-     */
-    color?: 'text' | 'muteText';
+  /**
+   * Level of heading
+   * @default '1'
+   */
+  level?: HeadingLevel;
+
+  /**
+   * Color of heading
+   * @default 'text'
+   */
+  color?: TextColor;
+
+  classNames?: string[];
 }
 
-const Heading = (props: HeadingProps) => {
-    switch (props.level) {
-        case '3':
-            return <h3 className={`${style.heading} ${style[props.color || 'text']}`}>{props.children}</h3>;
-        case '2':
-            return <h2 className={`${style.heading} ${style[props.color || 'text']}`}>{props.children}</h2>;
-        case '1':
-        default:
-            return <h1 className={`${style.heading} ${style[props.color || 'text']}`}>{props.children}</h1>;
-    }
+export type HeadingPresenterProps = {
+  children: ReactNode;
+  tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  color: 'text' | 'muteText';
+  classNames: string[];
+}
+
+export const HeadingPresenter = (props: HeadingPresenterProps): ReactElement => {
+  const Tag = props.tag as keyof JSX.IntrinsicElements;
+  const className = [styles.heading, styles[props.color], ...props.classNames].join(' ');
+  return (
+    <Tag className={[styles.heading, styles[props.color], ...props.classNames].join(' ')}>
+      {props.children}
+    </Tag>
+  );
+}
+
+export const HeadingContainer = (presenter: (props: HeadingPresenterProps) => ReactElement, props: HeadingProps): ReactElement => {
+  let tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  switch (props.level) {
+    case '6':
+      tag = 'h6';
+      break;
+    case '5':
+      tag = 'h5';
+      break;
+    case '4':
+      tag = 'h4';
+      break;
+    case '3':
+      tag = 'h3';
+      break;
+    case '2':
+      tag = 'h2';
+      break;
+    case '1':
+    default:
+      tag = 'h1';
+  }
+  const presenterProps: HeadingPresenterProps = {
+    children: props.children,
+    tag,
+    color: props.color || 'text',
+    classNames: props.classNames || [],
+  }
+  return presenter(presenterProps);
+}
+
+const Heading: React.FC<HeadingProps>  = (props: HeadingProps): ReactElement => {
+  return containPresenter<HeadingProps, HeadingPresenterProps>(HeadingContainer, HeadingPresenter)(props);
 }
 
 export default Heading;
