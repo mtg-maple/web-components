@@ -4,7 +4,7 @@ import { containPresenter } from '../../utils';
 import styles from './style.scss';
 
 export type HeadingLevel = '1' | '2' | '3' | '4' | '5' | '6';
-export type TextColor = 'text' | 'muteText';
+export type HeadingTextColor = 'text' | 'muteText';
 
 export type HeadingProps = {
   /**
@@ -14,15 +14,19 @@ export type HeadingProps = {
 
   /**
    * Level of heading
+   * 
+   * type HeadingLevel = '1' | '2' | '3' | '4' | '5' | '6'
    * @default '1'
    */
   level?: HeadingLevel;
 
   /**
    * Color of heading
+   * 
+   * type HeadingTextColor = 'text' | 'muteText'
    * @default 'text'
    */
-  color?: TextColor;
+  color?: HeadingTextColor;
 
   classNames?: string[];
 }
