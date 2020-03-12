@@ -1,6 +1,8 @@
 import { configure } from '@storybook/react';
 import { setConsoleOptions } from '@storybook/addon-console';
 import { addParameters } from '@storybook/react'; // <- or your storybook framework
+import { addons } from '@storybook/addons';
+import { themes } from '@storybook/theming';
 
 setConsoleOptions({
   panelExclude: [],
@@ -12,6 +14,9 @@ addParameters({
     { name: 'twitter', value: '#00aced'},
     { name: 'facebook', value: '#3b5998' },
   ],
+  options: {
+    theme: themes.dark,
+  },
 });
 
 function loadStories() {

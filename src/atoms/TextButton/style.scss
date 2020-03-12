@@ -1,17 +1,20 @@
+$text-button-height: 2rem;
+$text-button-border-outline: 3px;
+$text-button-padding-y: calc(.5rem - #{$text-button-border-outline});
+$text-button-padding-x: calc(2rem - #{$text-button-border-outline});
+
 .textButton {
-    height: 2rem;
-    padding: calc(.5rem - 3px) calc(2rem - 3px);
-    border-radius: 1rem;
-    border: 3px solid transparent;
+    height: $text-button-height;
+    padding: $text-button-padding-y $text-button-padding-x;
+    border-radius: calc(#{$text-button-height} / 2);
+    border: $text-button-border-outline solid transparent;
 
-    font-size: .75rem;
-    line-height: 1rem;
+    font-size: $font-size-s;
+    line-height: $font-size-s;
     text-align: center;
-    font-family: $defaultFontFamily;
+    font-family: $font-family-text;
     font-style: normal;
-    font-weight: bold;
-
-    transition: all ease-in-out 150ms;
+    font-weight: $font-weight-bold;
 }
 
 .textButton.grow {
@@ -24,42 +27,43 @@
 
 .textButton:not(:disabled):hover {
     cursor: pointer;
+    transition: all $hover-animation-timing $hover-animation-duration;
 }
 
 .textButton.primary {
-    background-color: $primaryColor;
-    color: $textColor;
+    background-color: $color-primary;
+    color: $color-text;
 }
 
 .textButton.primary:not(:disabled):hover {
-    background-color: $primaryDarkColor;
+    background-color: $color-primary-focus;
 }
 
 .textButton.primary:not(:disabled):focus {
-    background-color: $primaryDarkColor;
-    border-color: $primaryLightColor;
+    background-color: $color-primary-focus;
+    border-color: $color-primary-disabled;
 }
 
 .textButton.primary:disabled {
-    background-color: $primaryLightColor;
-    color: rgba($textColor, .5);
+    background-color: $color-primary-disabled;
+    color: rgba($color-text, .5);
 }
 
 .textButton.secondary {
-    background-color: $secondaryColor;
-    color: $textColor;
+    background-color: $color-secondary;
+    color: $color-text;
 }
 
 .textButton.secondary:not(:disabled):hover {
-    background-color: $secondaryDarkColor;
+    background-color: $color-secondary-focus;
 }
 
 .textButton.secondary:not(:disabled):focus {
-    background-color: $secondaryDarkColor;
-    border-color: $secondaryLightColor;
+    background-color: $color-secondary-focus;
+    border-color: $color-secondary-disabled;
 }
 
 .textButton.secondary:disabled {
-    background-color: $secondaryLightColor;
-    color: rgba($textColor, .5);
+    background-color: $color-secondary-disabled;
+    color: rgba($color-text, .5);
 }

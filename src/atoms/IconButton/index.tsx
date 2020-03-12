@@ -16,9 +16,9 @@ export interface IconButtonProps {
    * Size of the icon
    * 
    * アイコンの大きさを指定する
-   * @default 'regular'
+   * @default 'medium'
    */
-  type?: 'large' | 'regular' | 'small';
+  type?: 'large' | 'medium' | 'small';
 
   /**
    * Color of the icon
@@ -33,7 +33,7 @@ export interface IconButtonProps {
 
 const IconButton = (props: IconButtonProps) => (
   <button
-    className={`${styles.iconButton} ${styles[props.type || 'regular']} ${styles[props.color || 'primary']}`}
+    className={`${styles.iconButton} ${styles[props.type || 'medium']} ${styles[props.color || 'primary']}`}
     onClick={(e) => {
       if (props.onClick != undefined) {
         props.onClick(e);
