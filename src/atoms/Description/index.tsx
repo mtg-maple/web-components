@@ -7,9 +7,9 @@ export interface DescriptionProps {
 
   /**
    * Font size of the description
-   * @default 'regular'
+   * @default 'medium'
    */
-  size?: 'regular' | 'small';
+  size?: 'medium' | 'small';
 
   /**
    * Color of the description
@@ -32,7 +32,7 @@ const Description = (props: DescriptionProps) => {
   <p
     className={`
       ${styles.description}
-      ${styles[props.size || 'regular']}
+      ${styles[props.size || 'medium']}
       ${styles[props.color || 'text']}
       ${maxLine == 1 ? styles.singleLine : ''}
       ${maxLine >= 2 ? styles.multipleLine : ''}
