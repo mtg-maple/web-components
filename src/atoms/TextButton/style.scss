@@ -12,7 +12,7 @@ $text-button-padding-x: calc(2rem - #{$text-button-border-outline});
     font-size: $font-size-s;
     line-height: $font-size-s;
     text-align: center;
-    font-family: $defaultFontFamily;
+    font-family: $font-family-text;
     font-style: normal;
     font-weight: $font-weight-bold;
 }
