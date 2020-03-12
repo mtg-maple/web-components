@@ -3,19 +3,19 @@
 }
 
 .description.regular {
-  font-size: 1rem;
+  font-size: $font-size-m;
 }
 
 .description.small {
-  font-size: 0.75rem;
+  font-size: $font-size-s;
 }
 
 .description.text {
-  color: $textColor;
+  color: $color-text;
 }
 
 .description.muteText {
-  color: $muteTextColor;
+  color: $color-text-mute;
 }
 
 .description.singleLine {
