@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, ReactElement } from 'react';
 
 import styles from './style.scss';
 
@@ -7,9 +7,9 @@ export interface DescriptionProps {
 
   /**
    * Font size of the description
-   * @default 'medium'
+   * @default 'regular'
    */
-  size?: 'medium' | 'small';
+  size?: 'regular' | 'small';
 
   /**
    * Color of the description
@@ -23,7 +23,7 @@ export interface DescriptionProps {
   maxLine?: number;
 }
 
-const Description = (props: DescriptionProps) => {
+const Description = (props: DescriptionProps): ReactElement => {
   const maxLine = props.maxLine || 0;
   const inlineStyle = {
     WebkitLineClamp: props.maxLine,
@@ -32,7 +32,7 @@ const Description = (props: DescriptionProps) => {
   <p
     className={`
       ${styles.description}
-      ${styles[props.size || 'medium']}
+      ${styles[props.size || 'regular']}
       ${styles[props.color || 'text']}
       ${maxLine == 1 ? styles.singleLine : ''}
       ${maxLine >= 2 ? styles.multipleLine : ''}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import styles from './style.scss';
 
@@ -25,7 +25,7 @@ type SelectProps = {
   onClick?: (e: React.MouseEvent) => void;
 }
 
-const Select = (props: SelectProps) => {
+const Select = (props: SelectProps): ReactElement => {
   return (
     <select className={[styles.select, props.classNames].join(' ')} dir={props.dir || 'auto'} onChange={props.onChange} onClick={props.onClick}>
       {props.options.map((option: SelectOption) => (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import styles from './style.scss';
 
@@ -31,18 +31,14 @@ export interface TextButtonProps {
   onClick?: (e: React.MouseEvent) => void;
 }
 
-const TextButton = (props: TextButtonProps) => (
+const TextButton = (props: TextButtonProps): ReactElement => (
   <button
     className={`
       ${styles.textButton} ${styles[props.color || 'primary']}
       ${props.grow ? styles.grow : ''}
     `}
     disabled={props.disabled || false}
-    onClick={(e) => {
-      if (props.onClick != undefined) {
-        props.onClick(e);
-      }
-    }}
+    onClick={props.onClick}
   >
     {props.label}
   </button>
