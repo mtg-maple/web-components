@@ -4,9 +4,18 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
     'jest',
+    'react',
   ],
   'env': {
     'jest/globals': true,
+    'node': true,
+    'es6': true,
+  },
+  'ecmaFeatures': {
+    'jsx': true,
+  },
+  'rules': {
+    'react/jsx-uses-react': [1],
   },
   extends: [
     'eslint:recommended',
