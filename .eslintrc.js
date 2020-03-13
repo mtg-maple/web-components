@@ -16,6 +16,7 @@ module.exports = {
   },
   'rules': {
     'react/jsx-uses-react': [1],
+    'react/jsx-uses-vars': [1],
   },
   extends: [
     'eslint:recommended',
