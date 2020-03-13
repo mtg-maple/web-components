@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import styles from './style.scss';
 
-type LabelProps = {
+export type LabelProps = {
   /**
    * Text to show
    */
