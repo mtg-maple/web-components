@@ -1,6 +1,6 @@
 
 .label {
-  font-family: $font-family-label;
+  font-family: $font-family-text;
   text-align: center;
 }
 
@@ -33,4 +33,12 @@
 
 .label.muteText {
   color: $color-text-mute;
+}
+
+.label.default {
+  font-weight: $font-weight-default;
+}
+
+.label.bold {
+  font-weight: $font-weight-bold;
 }

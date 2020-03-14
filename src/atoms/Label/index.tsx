@@ -17,10 +17,15 @@ export type LabelProps = {
    * @default 'medium'
    */
   size?: 'large' | 'medium' | 'small';
+
+  /**
+   * @default 'default'
+   */
+  weight?: 'default' | 'bold';
 }
 
 const Label = (props: LabelProps): ReactElement => (
-  <span className={[styles.label, styles[props.color || 'text'], styles[props.size || 'medium']].join(' ')}>
+  <span className={[styles.label, styles[props.color || 'text'], styles[props.size || 'medium'], styles[props.weight || 'default']].join(' ')}>
     {props.text}
   </span>
 )
