@@ -18,7 +18,7 @@ export interface IconButtonProps {
    * アイコンの大きさを指定する
    * @default 'medium'
    */
-  type?: 'large' | 'medium' | 'small';
+  size?: 'large' | 'medium' | 'small';
 
   /**
    * Color of the icon
@@ -29,11 +29,13 @@ export interface IconButtonProps {
   color?: 'primary' | 'secondary' | 'text' | 'muteText';
 
   onClick?: (e: React.MouseEvent) => void;
+
+  className?: string;
 }
 
 const IconButton = (props: IconButtonProps): ReactElement => (
   <button
-    className={`${styles.iconButton} ${styles[props.type || 'medium']} ${styles[props.color || 'primary']}`}
+    className={[styles.iconButton, styles[props.size || 'medium'], styles[props.color || 'primary'], props.className].join(' ')}
     onClick={props.onClick}
   >
     <FontAwesomeIcon icon={props.icon}/>

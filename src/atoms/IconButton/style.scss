@@ -3,44 +3,48 @@ $icon-button-size-m: 1.5rem;
 $icon-button-size-s: 1rem;
 
 .iconButton {
-    background: none;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: none;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.iconButton:hover {
+  cursor: pointer;
 }
 
 .iconButton.large {
-    font-size: $font-size-l;
-    width: $icon-button-size-l;
-    height: $icon-button-size-l;
+  font-size: $font-size-l;
+  width: $icon-button-size-l;
+  height: $icon-button-size-l;
 }
 
 .iconButton.medium {
-    font-size: $font-size-m;
-    width: $icon-button-size-m;
-    height: $icon-button-size-m;
+  font-size: $font-size-m;
+  width: $icon-button-size-m;
+  height: $icon-button-size-m;
 }
 
 .iconButton.small {
-    font-size: $font-size-s;
-    width: $icon-button-size-s;
-    height: $icon-button-size-s;
+  font-size: $font-size-s;
+  width: $icon-button-size-s;
+  height: $icon-button-size-s;
 }
 
 .iconButton.primary {
-    color: $color-primary;
+  color: $color-primary;
 }
 
 .iconButton.secondary {
-    color: $color-secondary;
+  color: $color-secondary;
 }
 
 .iconButton.text {
-    color: $color-text;
+  color: $color-text;
 }
 
-.iconButton.secondary {
-    color: $color-text-mute;
+.iconButton.muteText {
+  color: $color-text-mute;
 }
