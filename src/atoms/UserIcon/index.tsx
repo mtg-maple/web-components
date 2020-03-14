@@ -5,7 +5,8 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import styles from './style.scss';
 
 export type UserIconProps = {
-  imageUrl?: string;
+  alt: string;
+  src?: string;
   size?: 'large' | 'medium' | 'small';
   color?: 'primary' | 'secondary' | 'text' | 'muteText';
   linkUrl?: string;
@@ -14,8 +15,8 @@ export type UserIconProps = {
 
 const UserIcon = (props: UserIconProps): ReactElement => {
   let InnerIcon: () => ReactElement;
-  if (props.imageUrl) {
-    InnerIcon = (): ReactElement => <img className={[styles.iconImg, styles[props.size || 'medium']].join(' ')} src={props.imageUrl}></img>;
+  if (props.src) {
+    InnerIcon = (): ReactElement => <img className={[styles.iconImg, styles[props.size || 'medium']].join(' ')} src={props.src} alt={props.alt}></img>;
   } else {
     InnerIcon = (): ReactElement => <FontAwesomeIcon className={[styles.altIcon, styles[props.color || 'text'], styles[props.size || 'medium']].join(' ')} icon={faUserCircle}/>;
   }
