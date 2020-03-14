@@ -2,6 +2,9 @@ $user-icon-size-l: 4rem;
 $user-icon-size-m: 3rem;
 $user-icon-size-s: 2rem;
 
+a {
+  color: transparent;
+}
 
 .altIcon.large {
   font-size: $user-icon-size-l;
@@ -22,6 +25,22 @@ $user-icon-size-s: 2rem;
   width: $user-icon-size-s;
   height: $user-icon-size-s;
   border-radius: calc(#{$user-icon-size-s} / 2);
+}
+
+.altIcon.primary {
+  color: $color-primary;
+}
+
+.altIcon.secondary {
+  color: $color-secondary;
+}
+
+.altIcon.text {
+  color: $color-text;
+}
+
+.altIcon.muteText {
+  color: $color-text-mute;
 }
 
 .iconImg.large {

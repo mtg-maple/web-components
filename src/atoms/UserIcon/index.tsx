@@ -7,6 +7,7 @@ import styles from './style.scss';
 export type UserIconProps = {
   imageUrl?: string;
   size?: 'large' | 'medium' | 'small';
+  color?: 'primary' | 'secondary' | 'text' | 'muteText';
   linkUrl?: string;
   onClick?: (e: React.MouseEvent) => void;
 }
@@ -16,7 +17,7 @@ const UserIcon = (props: UserIconProps): ReactElement => {
   if (props.imageUrl) {
     InnerIcon = (): ReactElement => <img className={[styles.iconImg, styles[props.size || 'medium']].join(' ')} src={props.imageUrl}></img>;
   } else {
-    InnerIcon = (): ReactElement => <FontAwesomeIcon className={[styles.altIcon, styles[props.size || 'medium']].join(' ')} icon={faUserCircle}/>;
+    InnerIcon = (): ReactElement => <FontAwesomeIcon className={[styles.altIcon, styles[props.color || 'text'], styles[props.size || 'medium']].join(' ')} icon={faUserCircle}/>;
   }
   return (
       props.onClick || props.linkUrl ? <a href={props.linkUrl || '#'} onClick={props.onClick}><InnerIcon/></a> : <InnerIcon/>
