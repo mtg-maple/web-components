@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
@@ -14,31 +14,31 @@ export type InputProps = {
   setValue: (newValue: string) => void;
 }
 
-const Input = (props: InputProps): ReactElement => {
+const Input: FC<InputProps> = ({ value, icon, placeholder, className, setValue }) => {
   return (
-    <div className={[styles.inputBox, props.className].join(' ')}>
+    <div className={[styles.inputBox, className].join(' ')}>
       {
-        props.icon &&
-        <FontAwesomeIcon className={styles.icon} icon={props.icon}/>
+        icon &&
+        <FontAwesomeIcon className={styles.icon} icon={icon}/>
       }
       <input
         type="text"
-        value={props.value}
-        className={[styles.input, props.icon && styles.withIcon].join(' ')}
-        placeholder={props.placeholder}
+        value={value}
+        className={[styles.input, icon && styles.withIcon].join(' ')}
+        placeholder={placeholder}
         onChange={(e: React.FormEvent<HTMLInputElement>): void =>{
-          props.setValue(e.currentTarget.value);
+          setValue(e.currentTarget.value);
         }}
       ></input>
       {
-        props.value &&
+        value &&
         <IconButton
           icon={faTimesCircle}
           size="small"
           color="muteText"
           className={styles.clearButton}
           onClick={(): void =>{
-            props.setValue('');
+            setValue('');
           }}
         />
       }

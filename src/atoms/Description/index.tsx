@@ -1,4 +1,4 @@
-import React, { ReactNode, ReactElement } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import styles from './style.scss';
 
@@ -23,22 +23,21 @@ export interface DescriptionProps {
   maxLine?: number;
 }
 
-const Description = (props: DescriptionProps): ReactElement => {
-  const maxLine = props.maxLine || 0;
+const Description: FC<DescriptionProps> = ({children, size = 'regular', color = 'text', maxLine = 0}) => {
   const inlineStyle = {
-    WebkitLineClamp: props.maxLine,
+    WebkitLineClamp: maxLine,
   };
   return (
   <p
     className={`
       ${styles.description}
-      ${styles[props.size || 'regular']}
-      ${styles[props.color || 'text']}
+      ${styles[size]}
+      ${styles[color]}
       ${maxLine == 1 ? styles.singleLine : ''}
       ${maxLine >= 2 ? styles.multipleLine : ''}
     `}
     style={maxLine >= 2 ? inlineStyle : {}}
-  >{props.children}</p>
+  >{children}</p>
   );
 };
 

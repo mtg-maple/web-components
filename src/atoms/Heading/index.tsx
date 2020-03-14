@@ -1,4 +1,4 @@
-import React, { ReactNode, ReactElement } from 'react';
+import React, { FC, ReactNode, ReactElement } from 'react';
 
 import { containPresenter } from '../../utils';
 import styles from './style.scss';
@@ -43,17 +43,17 @@ export type HeadingPresenterProps = {
   classNames: string[];
 }
 
-export const HeadingPresenter = (props: HeadingPresenterProps): ReactElement => {
-  const Tag = props.tag as keyof JSX.IntrinsicElements;
-  const className = [styles.heading, styles[props.color], ...props.classNames].join(' ');
+export const HeadingPresenter: FC<HeadingPresenterProps> = ({ children, tag, color, classNames }) => {
+  const Tag = tag as keyof JSX.IntrinsicElements;
+  const className = [styles.heading, styles[color], ...classNames].join(' ');
   return (
     <Tag className={className}>
-      {props.children}
+      {children}
     </Tag>
   );
 }
 
-export const HeadingContainer = (presenter: (props: HeadingPresenterProps) => ReactElement, props: HeadingProps): ReactElement => {
+export const HeadingContainer = (presenter: FC<HeadingPresenterProps>, props: HeadingProps): ReactElement | null => {
   let tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   switch (props.level) {
     case '6':
@@ -84,7 +84,7 @@ export const HeadingContainer = (presenter: (props: HeadingPresenterProps) => Re
   return presenter(presenterProps);
 }
 
-const Heading = (props: HeadingProps): ReactElement => {
+const Heading: FC<HeadingProps> = (props) => {
   return containPresenter<HeadingProps, HeadingPresenterProps>(HeadingContainer, HeadingPresenter)(props);
 }
 

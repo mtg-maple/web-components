@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { FC } from 'react';
 
 import styles from './style.scss';
 
@@ -22,11 +22,13 @@ export type LabelProps = {
    * @default 'default'
    */
   weight?: 'default' | 'bold';
+
+  className?: string;
 }
 
-const Label = (props: LabelProps): ReactElement => (
-  <span className={[styles.label, styles[props.color || 'text'], styles[props.size || 'medium'], styles[props.weight || 'default']].join(' ')}>
-    {props.text}
+const Label: FC<LabelProps> = ({ text, color = 'text', size = 'medium', weight = 'default', className = '' }) => (
+  <span className={[styles.label, styles[color], styles[size], styles[weight], className].join(' ')}>
+    {text}
   </span>
 )
 

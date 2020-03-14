@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { FC } from 'react';
 
 import styles from './style.scss';
 
@@ -25,13 +25,13 @@ export type CardImageProps = {
   className?: string;
 }
 
-const CardImage = (props: CardImageProps): ReactElement => {
+const CardImage: FC<CardImageProps> = ({ src, alt, size = 'thumbnail', onClick, linkUrl = '#', className }) => {
   type ImageProps = {
-    className?: string;
+    innerClassName?: string;
   }
-  const Image = (innerProps: ImageProps): ReactElement => <img className={[styles.cardImage, styles[props.size || 'thumbnail'], innerProps.className].join(' ')} src={props.src} alt={props.alt}/>;
+  const Image: FC<ImageProps> = ({ innerClassName = '' }) => <img className={[styles.cardImage, styles[size], innerClassName].join(' ')} src={src} alt={alt}/>;
   return (
-    props.onClick || props.linkUrl ? <a className={props.className} href={props.linkUrl || '#'} onClick={props.onClick}><Image/></a> : <Image className={props.className}/>
+    onClick || linkUrl != '#' ? <a className={className} href={linkUrl} onClick={onClick}><Image/></a> : <Image innerClassName={className}/>
   );
 };
 

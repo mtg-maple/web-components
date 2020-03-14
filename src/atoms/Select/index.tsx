@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { FC } from 'react';
 
 import styles from './style.scss';
 
@@ -10,7 +10,7 @@ type SelectOption = {
 type SelectProps = {
   options: SelectOption[];
 
-  classNames?: string[];
+  className?: string;
   
   /**
    * text alignment in select box
@@ -25,10 +25,10 @@ type SelectProps = {
   onClick?: (e: React.MouseEvent) => void;
 }
 
-const Select = (props: SelectProps): ReactElement => {
+const Select: FC<SelectProps> = ({ options, dir = 'auto', className = '', onChange, onClick }) => {
   return (
-    <select className={[styles.select, props.classNames].join(' ')} dir={props.dir || 'auto'} onChange={props.onChange} onClick={props.onClick}>
-      {props.options.map((option: SelectOption) => (
+    <select className={[styles.select, className].join(' ')} dir={dir} onChange={onChange} onClick={onClick}>
+      {options.map((option: SelectOption) => (
         <option value={option.value} key={`${option.value}-${option.label}`}>{option.label}</option>
       ))}
     </select>

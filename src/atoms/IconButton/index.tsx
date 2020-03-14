@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
@@ -33,12 +33,12 @@ export interface IconButtonProps {
   className?: string;
 }
 
-const IconButton = (props: IconButtonProps): ReactElement => (
+const IconButton: FC<IconButtonProps> = ({ icon, size = 'medium', color = 'primary', onClick, className = ''}) => (
   <button
-    className={[styles.iconButton, styles[props.size || 'medium'], styles[props.color || 'primary'], props.className].join(' ')}
-    onClick={props.onClick}
+    className={[styles.iconButton, styles[size], styles[color], className].join(' ')}
+    onClick={onClick}
   >
-    <FontAwesomeIcon icon={props.icon}/>
+    <FontAwesomeIcon icon={icon}/>
   </button>
 );
 

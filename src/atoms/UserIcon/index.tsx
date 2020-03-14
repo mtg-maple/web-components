@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { FC, ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,15 +13,15 @@ export type UserIconProps = {
   onClick?: (e: React.MouseEvent) => void;
 }
 
-const UserIcon = (props: UserIconProps): ReactElement => {
-  let InnerIcon: () => ReactElement;
-  if (props.src) {
-    InnerIcon = (): ReactElement => <img className={[styles.iconImg, styles[props.size || 'medium']].join(' ')} src={props.src} alt={props.alt}></img>;
+const UserIcon: FC<UserIconProps> = ({ alt, src, size = 'medium', color = 'text', linkUrl = '#', onClick }) => {
+  let InnerIcon: FC;
+  if (src) {
+    InnerIcon = (): ReactElement => <img className={[styles.iconImg, styles[size]].join(' ')} src={src} alt={alt}></img>;
   } else {
-    InnerIcon = (): ReactElement => <FontAwesomeIcon className={[styles.altIcon, styles[props.color || 'text'], styles[props.size || 'medium']].join(' ')} icon={faUserCircle}/>;
+    InnerIcon = (): ReactElement => <FontAwesomeIcon className={[styles.altIcon, styles[color], styles[size]].join(' ')} icon={faUserCircle}/>;
   }
   return (
-      props.onClick || props.linkUrl ? <a href={props.linkUrl || '#'} onClick={props.onClick}><InnerIcon/></a> : <InnerIcon/>
+      onClick || linkUrl != '#' ? <a href={linkUrl || '#'} onClick={onClick}><InnerIcon/></a> : <InnerIcon/>
   );
 }
 

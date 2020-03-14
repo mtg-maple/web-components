@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { FC } from 'react';
 
 import styles from './style.scss';
 
@@ -19,9 +19,9 @@ type NumberProps = {
   size?: 'large' | 'medium' | 'small';
 }
 
-const Number = (props: NumberProps): ReactElement => (
-  <span className={[styles.number, styles[props.color || 'text'], styles[props.size || 'medium']].join(' ')}>
-    {props.num}
+const Number: FC<NumberProps> = ({ num, color = 'text', size = 'medium' }) => (
+  <span className={[styles.number, styles[color], styles[size]].join(' ')}>
+    {num}
   </span>
 )
 

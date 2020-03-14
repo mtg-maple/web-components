@@ -1,8 +1,8 @@
-import { ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 
 export function containPresenter<P, PP> (
-  container: (presenter: (props: PP) => ReactElement, props: P) => ReactElement,
-  presenter: (props: PP) => ReactElement
-): (props: P) => ReactElement {
-  return (props: P): ReactElement => container(presenter, props);
+  container: (presenter: FC<PP>, props: P) => ReactElement | null,
+  presenter: FC<PP>
+): FC<P> {
+  return (props: P): ReactElement | null => container(presenter, props);
 }
