@@ -1,0 +1,53 @@
+import { action } from "@storybook/addon-actions";
+import { Story, Meta, Preview, Props, Source, Description } from "@storybook/addon-docs/blocks";
+
+import UserIcon from '../UserIcon';
+
+<Meta
+  title="Atoms/UserIcon"
+  parameters={{
+    component: UserIcon,
+  }}
+/>
+
+# UserIcon
+
+<Source code={`
+    import UserIcon from '@mtg-maple/web-components/atoms/UserIcon';
+     
+    export default = (props) => (
+        <UserIcon imageUrl="https://raw.githubusercontent.com/mtg-maple/web-components/assets/images/test-profile.jpeg"/>
+    );
+`} />
+
+<Props of={UserIcon} />
+
+## Default Icon
+
+<Preview withSource="open">
+  <Story name="small">
+    <UserIcon size="small"/>
+  </Story>
+  <Story name="medium">
+    <UserIcon size="medium"/>
+  </Story>
+  <Story name="large">
+    <UserIcon size="large"/>
+  </Story>
+</Preview>
+
+
+## Image Icon
+
+<Preview withSource="open">
+  <Story name="imageSmall">
+    <UserIcon size="small" imageUrl="https://raw.githubusercontent.com/mtg-maple/web-components/assets/images/test-profile.jpeg"/>
+  </Story>
+  <Story name="imageMedium">
+    <UserIcon size="medium" imageUrl="https://raw.githubusercontent.com/mtg-maple/web-components/assets/images/test-profile.jpeg"/>
+  </Story>
+  <Story name="imageLarge">
+    <UserIcon size="large" imageUrl="https://raw.githubusercontent.com/mtg-maple/web-components/assets/images/test-profile.jpeg"/>
+  </Story>
+</Preview>
+  
