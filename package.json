@@ -75,7 +75,8 @@
     "@fortawesome/free-brands-svg-icons": "5.12.1",
     "@fortawesome/free-regular-svg-icons": "5.12.1",
     "@fortawesome/free-solid-svg-icons": "5.12.1",
-    "@fortawesome/react-fontawesome": "0.1.9"
+    "@fortawesome/react-fontawesome": "0.1.9",
+    "mana-font": "1.6.0"
   },
   "jest": {
     "roots": [
@@ -97,6 +98,8 @@
     "moduleNameMapper": {
       "^.+\\.(css|less|scss)$": "identity-obj-proxy"
     },
-    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ]
   }
 }
