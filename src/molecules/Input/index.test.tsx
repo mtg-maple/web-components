@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 
 import Input from '../Input';
 
@@ -21,9 +21,7 @@ describe('Input',() => {
     expect(wrapper.find('input').prop('value')).toEqual('hello');
     expect(wrapper.find('span').text()).toEqual('hello');
   });
-});
 
-describe('Input',() => {
   it('clear event', () => {
     const wrapper = mount(<Wrapper/>);
     wrapper.find('button').simulate('click');

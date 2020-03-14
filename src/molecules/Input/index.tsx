@@ -1,4 +1,4 @@
-import React, { useState, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
@@ -37,7 +37,7 @@ const Input = (props: InputProps): ReactElement => {
           size="small"
           color="muteText"
           className={styles.clearButton}
-          onClick={(e: React.MouseEvent): void =>{
+          onClick={(): void =>{
             props.setValue('');
           }}
         />
