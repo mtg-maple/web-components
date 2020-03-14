@@ -1,0 +1,181 @@
+import { action } from "@storybook/addon-actions";
+import { Story, Meta, Preview, Props, Source, Description } from "@storybook/addon-docs/blocks";
+
+import Symbol from '../Symbol';
+
+<Meta
+  title="Atoms/Symbol"
+  parameters={{
+    component: Symbol,
+  }}
+/>
+
+# Symbol
+
+<Source code={`
+    import Symbol from '@mtg-maple/web-components/atoms/Symbol';
+     
+    export default = (props) => (
+        <Symbol value="W"/>
+    );
+`} />
+
+<Props of={Symbol} />
+
+## Size
+
+<Preview withSource="open">
+  <Story name="Small">
+    <Symbol size="small" value="W"/>
+  </Story>
+  <Story name="Medium">
+    <Symbol size="medium" value="W"/>
+  </Story>
+  <Story name="Large">
+    <Symbol size="large" value="W"/>
+  </Story>
+</Preview>
+
+## Single Mana
+
+<Preview withSource="open">
+  <Story name="White">
+    <Symbol value="W"/>
+  </Story>
+  <Story name="Black">
+    <Symbol value="B"/>
+  </Story>
+  <Story name="Blue">
+    <Symbol value="U"/>
+  </Story>
+  <Story name="Red">
+    <Symbol value="R"/>
+  </Story>
+  <Story name="Green">
+    <Symbol value="G"/>
+  </Story>
+</Preview>
+
+## Multi Mana
+
+<Preview withSource="open">
+  <Story name="White & Black">
+    <Symbol value="W/B"/>
+  </Story>
+  <Story name="White & Blue">
+    <Symbol value="W/U"/>
+  </Story>
+  <Story name="Black & Red">
+    <Symbol value="B/R"/>
+  </Story>
+  <Story name="Black & Green">
+    <Symbol value="B/G"/>
+  </Story>
+  <Story name="Blue & Black">
+    <Symbol value="U/B"/>
+  </Story>
+  <Story name="Blue & Red">
+    <Symbol value="U/R"/>
+  </Story>
+  <Story name="Red & White">
+    <Symbol value="R/W"/>
+  </Story>
+  <Story name="Red & Green">
+    <Symbol value="R/G"/>
+  </Story>
+  <Story name="Green & White">
+    <Symbol value="G/W"/>
+  </Story>
+  <Story name="Green & Blue">
+    <Symbol value="G/U"/>
+  </Story>
+</Preview>
+
+## Colorless Cost
+
+<Preview withSource="open">
+  <Story name="Cost 0">
+    <Symbol value="0"/>
+  </Story>
+  <Story name="Cost 1">
+    <Symbol value="1"/>
+  </Story>
+  <Story name="Cost 2">
+    <Symbol value="2"/>
+  </Story>
+  <Story name="Cost 3">
+    <Symbol value="3"/>
+  </Story>
+  <Story name="Cost 4">
+    <Symbol value="4"/>
+  </Story>
+  <Story name="Cost X">
+    <Symbol value="X"/>
+  </Story>
+</Preview>
+
+## Phyrexian Mana
+
+<Preview withSource="open">
+  <Story name="Phyrexian Mana">
+    <Symbol value="P"/>
+  </Story>
+  <Story name="Phyrexian White">
+    <Symbol value="W/P"/>
+  </Story>
+  <Story name="Phyrexian Black">
+    <Symbol value="B/P"/>
+  </Story>
+  <Story name="Phyrexian Blue">
+    <Symbol value="U/P"/>
+  </Story>
+  <Story name="Phyrexian Red">
+    <Symbol value="R/P"/>
+  </Story>
+  <Story name="Phyrexian Green">
+    <Symbol value="G/P"/>
+  </Story>
+</Preview>
+
+## Card Type Icon
+
+<Preview withSource="open">
+  <Story name="Artifact">
+    <Symbol type="icon" value="Artifact"/>
+  </Story>
+  <Story name="Creature">
+    <Symbol type="icon" value="Creature"/>
+  </Story>
+  <Story name="Enchantment">
+    <Symbol type="icon" value="Enchantment"/>
+  </Story>
+  <Story name="Instant">
+    <Symbol type="icon" value="Instant"/>
+  </Story>
+  <Story name="Land">
+    <Symbol type="icon" value="Land"/>
+  </Story>
+  <Story name="Planeswalker">
+    <Symbol type="icon" value="Planeswalker"/>
+  </Story>
+  <Story name="Sorcery">
+    <Symbol type="icon" value="Sorcery"/>
+  </Story>
+</Preview>
+
+## Icon Colors
+
+<Preview withSource="open">
+  <Story name="Primary Color">
+    <Symbol type="icon" color="primary" value="Land"/>
+  </Story>
+  <Story name="Secondary Color">
+    <Symbol type="icon" color="secondary" value="Land"/>
+  </Story>
+  <Story name="Text Color">
+    <Symbol type="icon" color="text" value="Land"/>
+  </Story>
+  <Story name="Mute Text Color">
+    <Symbol type="icon" color="muteText" value="Land"/>
+  </Story>
+</Preview>

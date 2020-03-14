@@ -47,7 +47,7 @@ export const HeadingPresenter = (props: HeadingPresenterProps): ReactElement => 
   const Tag = props.tag as keyof JSX.IntrinsicElements;
   const className = [styles.heading, styles[props.color], ...props.classNames].join(' ');
   return (
-    <Tag className={[styles.heading, styles[props.color], ...props.classNames].join(' ')}>
+    <Tag className={className}>
       {props.children}
     </Tag>
   );

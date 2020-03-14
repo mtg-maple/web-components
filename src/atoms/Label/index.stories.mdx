@@ -1,32 +1,32 @@
 import { action } from "@storybook/addon-actions";
 import { Story, Meta, Preview, Props, Source, Description } from "@storybook/addon-docs/blocks";
 
-import Number from '../Number';
+import Label from '../Label';
 
 <Meta
-  title="Atoms/Number"
+  title="Atoms/Label"
   parameters={{
-    component: Number,
+    component: Label,
   }}
 />
 
-# Number
+# Label
 
 <Source code={`
-    import Number from '@mtg-maple/web-components/atoms/Number';
+    import Label from '@mtg-maple/web-components/atoms/Label';
      
     export default = (props) => (
-        <Number num={4} size="large" color="muteText"/>
+        <Label text="Medium"/>
     );
 `} />
 
-<Props of={Number} />
+<Props of={Label} />
 
 ## Default
 
 <Preview withSource="open">
   <Story name="default" >
-    <Number num={1}/>
+    <Label text="Medium"/>
   </Story>
 </Preview>
 
@@ -34,13 +34,13 @@ import Number from '../Number';
 
 <Preview withSource="open">
   <Story name="small" >
-    <Number num={1} size="small"/>
+    <Label text="Small" size="small"/>
   </Story>
   <Story name="medium" >
-    <Number num={2} size="medium"/>
+    <Label text="Medium" size="medium"/>
   </Story>
   <Story name="large" >
-    <Number num={3} size="large"/>
+    <Label text="Large" size="large"/>
   </Story>
 </Preview>
 
@@ -48,9 +48,20 @@ import Number from '../Number';
 
 <Preview withSource="open">
   <Story name="text" >
-    <Number num={1} color="text"/>
+    <Label text="Text" color="text"/>
   </Story>
   <Story name="muteText" >
-    <Number num={2} color="muteText"/>
+    <Label text="Mute Text" color="muteText"/>
+  </Story>
+</Preview>
+
+## Weight
+
+<Preview withSource="open">
+  <Story name="fontWeightDefault" >
+    <Label text="Default" weight="default"/>
+  </Story>
+  <Story name="fontWeightBold" >
+    <Label text="Bold" weight="bold"/>
   </Story>
 </Preview>

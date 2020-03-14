@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
@@ -18,7 +18,7 @@ export interface IconButtonProps {
    * アイコンの大きさを指定する
    * @default 'medium'
    */
-  type?: 'large' | 'medium' | 'small';
+  size?: 'large' | 'medium' | 'small';
 
   /**
    * Color of the icon
@@ -29,16 +29,15 @@ export interface IconButtonProps {
   color?: 'primary' | 'secondary' | 'text' | 'muteText';
 
   onClick?: (e: React.MouseEvent) => void;
+
+  className?: string;
 }
 
-const IconButton = (props: IconButtonProps) => (
+const IconButton = (props: IconButtonProps): ReactElement => (
   <button
-    className={`${styles.iconButton} ${styles[props.type || 'medium']} ${styles[props.color || 'primary']}`}
-    onClick={(e) => {
-      if (props.onClick != undefined) {
-        props.onClick(e);
-      }
-    }}>
+    className={[styles.iconButton, styles[props.size || 'medium'], styles[props.color || 'primary'], props.className].join(' ')}
+    onClick={props.onClick}
+  >
     <FontAwesomeIcon icon={props.icon}/>
   </button>
 );

@@ -18,6 +18,8 @@ $color-red-lt: #bf5100;
 
 /* Color Meaning */
 $color-base: $color-black;
+$color-base-aft: $color-black-dk;
+$color-base-fore: $color-black-lt;
 $color-link: none;
 $color-link-visited: none;
 $color-link-hover: none;
@@ -71,6 +73,7 @@ $space: .5rem;
 
 /* Frame */
 $line-width: 1px;
+$line-width-wide: 3px;
 $line-style: solid;
 $radius: 8px;
 $border: $line-width $line-style $color-line;
