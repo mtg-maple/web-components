@@ -7,7 +7,9 @@ import styles from './style.scss';
 
 export type TagsProps = {
   tags: Tag[];
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   setTags: (newTags: any[]) => void;
+  /* eslint-disable @typescript-eslint/no-explicit-any */
 }
 
 export interface Tag {
@@ -23,7 +25,7 @@ const Tags: FC<TagsProps> = ({ tags, setTags }) => {
             <Label text={tag.label} weight="bold" size="small"/>
             <IconButton color="text"
               icon={faTimes}
-              onClick={() => {
+              onClick={(): void => {
                 setTags(tags.filter((target: Tag) => target.label != tag.label));
               }}
             />
