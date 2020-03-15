@@ -1,38 +1,38 @@
 import { action } from "@storybook/addon-actions";
 import { Story, Meta, Preview, Props, Source, Description } from "@storybook/addon-docs/blocks";
 
-import Symbol from '../Symbol';
+import MagicSymbol from '../MagicSymbol';
 
 <Meta
-  title="Atoms/Symbol"
+  title="Atoms/MagicSymbol"
   parameters={{
-    component: Symbol,
+    component: MagicSymbol,
   }}
 />
 
-# Symbol
+# MagicSymbol
 
 <Source code={`
-    import Symbol from '@mtg-maple/web-components/atoms/Symbol';
+    import MagicSymbol from '@mtg-maple/web-components/atoms/MagicSymbol';
      
     export default = (props) => (
-        <Symbol value="W"/>
+        <MagicSymbol value="W"/>
     );
 `} />
 
-<Props of={Symbol} />
+<Props of={MagicSymbol} />
 
 ## Size
 
 <Preview withSource="open">
   <Story name="Small">
-    <Symbol size="small" value="W"/>
+    <MagicSymbol size="small" value="W"/>
   </Story>
   <Story name="Medium">
-    <Symbol size="medium" value="W"/>
+    <MagicSymbol size="medium" value="W"/>
   </Story>
   <Story name="Large">
-    <Symbol size="large" value="W"/>
+    <MagicSymbol size="large" value="W"/>
   </Story>
 </Preview>
 
@@ -40,19 +40,19 @@ import Symbol from '../Symbol';
 
 <Preview withSource="open">
   <Story name="White">
-    <Symbol value="W"/>
+    <MagicSymbol value="W"/>
   </Story>
   <Story name="Black">
-    <Symbol value="B"/>
+    <MagicSymbol value="B"/>
   </Story>
   <Story name="Blue">
-    <Symbol value="U"/>
+    <MagicSymbol value="U"/>
   </Story>
   <Story name="Red">
-    <Symbol value="R"/>
+    <MagicSymbol value="R"/>
   </Story>
   <Story name="Green">
-    <Symbol value="G"/>
+    <MagicSymbol value="G"/>
   </Story>
 </Preview>
 
@@ -60,34 +60,34 @@ import Symbol from '../Symbol';
 
 <Preview withSource="open">
   <Story name="White & Black">
-    <Symbol value="W/B"/>
+    <MagicSymbol value="W/B"/>
   </Story>
   <Story name="White & Blue">
-    <Symbol value="W/U"/>
+    <MagicSymbol value="W/U"/>
   </Story>
   <Story name="Black & Red">
-    <Symbol value="B/R"/>
+    <MagicSymbol value="B/R"/>
   </Story>
   <Story name="Black & Green">
-    <Symbol value="B/G"/>
+    <MagicSymbol value="B/G"/>
   </Story>
   <Story name="Blue & Black">
-    <Symbol value="U/B"/>
+    <MagicSymbol value="U/B"/>
   </Story>
   <Story name="Blue & Red">
-    <Symbol value="U/R"/>
+    <MagicSymbol value="U/R"/>
   </Story>
   <Story name="Red & White">
-    <Symbol value="R/W"/>
+    <MagicSymbol value="R/W"/>
   </Story>
   <Story name="Red & Green">
-    <Symbol value="R/G"/>
+    <MagicSymbol value="R/G"/>
   </Story>
   <Story name="Green & White">
-    <Symbol value="G/W"/>
+    <MagicSymbol value="G/W"/>
   </Story>
   <Story name="Green & Blue">
-    <Symbol value="G/U"/>
+    <MagicSymbol value="G/U"/>
   </Story>
 </Preview>
 
@@ -95,22 +95,22 @@ import Symbol from '../Symbol';
 
 <Preview withSource="open">
   <Story name="Cost 0">
-    <Symbol value="0"/>
+    <MagicSymbol value="0"/>
   </Story>
   <Story name="Cost 1">
-    <Symbol value="1"/>
+    <MagicSymbol value="1"/>
   </Story>
   <Story name="Cost 2">
-    <Symbol value="2"/>
+    <MagicSymbol value="2"/>
   </Story>
   <Story name="Cost 3">
-    <Symbol value="3"/>
+    <MagicSymbol value="3"/>
   </Story>
   <Story name="Cost 4">
-    <Symbol value="4"/>
+    <MagicSymbol value="4"/>
   </Story>
   <Story name="Cost X">
-    <Symbol value="X"/>
+    <MagicSymbol value="X"/>
   </Story>
 </Preview>
 
@@ -118,22 +118,22 @@ import Symbol from '../Symbol';
 
 <Preview withSource="open">
   <Story name="Phyrexian Mana">
-    <Symbol value="P"/>
+    <MagicSymbol value="P"/>
   </Story>
   <Story name="Phyrexian White">
-    <Symbol value="W/P"/>
+    <MagicSymbol value="W/P"/>
   </Story>
   <Story name="Phyrexian Black">
-    <Symbol value="B/P"/>
+    <MagicSymbol value="B/P"/>
   </Story>
   <Story name="Phyrexian Blue">
-    <Symbol value="U/P"/>
+    <MagicSymbol value="U/P"/>
   </Story>
   <Story name="Phyrexian Red">
-    <Symbol value="R/P"/>
+    <MagicSymbol value="R/P"/>
   </Story>
   <Story name="Phyrexian Green">
-    <Symbol value="G/P"/>
+    <MagicSymbol value="G/P"/>
   </Story>
 </Preview>
 
@@ -141,25 +141,25 @@ import Symbol from '../Symbol';
 
 <Preview withSource="open">
   <Story name="Artifact">
-    <Symbol type="icon" value="Artifact"/>
+    <MagicSymbol type="icon" value="Artifact"/>
   </Story>
   <Story name="Creature">
-    <Symbol type="icon" value="Creature"/>
+    <MagicSymbol type="icon" value="Creature"/>
   </Story>
   <Story name="Enchantment">
-    <Symbol type="icon" value="Enchantment"/>
+    <MagicSymbol type="icon" value="Enchantment"/>
   </Story>
   <Story name="Instant">
-    <Symbol type="icon" value="Instant"/>
+    <MagicSymbol type="icon" value="Instant"/>
   </Story>
   <Story name="Land">
-    <Symbol type="icon" value="Land"/>
+    <MagicSymbol type="icon" value="Land"/>
   </Story>
   <Story name="Planeswalker">
-    <Symbol type="icon" value="Planeswalker"/>
+    <MagicSymbol type="icon" value="Planeswalker"/>
   </Story>
   <Story name="Sorcery">
-    <Symbol type="icon" value="Sorcery"/>
+    <MagicSymbol type="icon" value="Sorcery"/>
   </Story>
 </Preview>
 
@@ -167,15 +167,15 @@ import Symbol from '../Symbol';
 
 <Preview withSource="open">
   <Story name="Primary Color">
-    <Symbol type="icon" color="primary" value="Land"/>
+    <MagicSymbol type="icon" color="primary" value="Land"/>
   </Story>
   <Story name="Secondary Color">
-    <Symbol type="icon" color="secondary" value="Land"/>
+    <MagicSymbol type="icon" color="secondary" value="Land"/>
   </Story>
   <Story name="Text Color">
-    <Symbol type="icon" color="text" value="Land"/>
+    <MagicSymbol type="icon" color="text" value="Land"/>
   </Story>
   <Story name="Mute Text Color">
-    <Symbol type="icon" color="muteText" value="Land"/>
+    <MagicSymbol type="icon" color="muteText" value="Land"/>
   </Story>
 </Preview>
