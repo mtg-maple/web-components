@@ -1,4 +1,4 @@
-export type SymbolString = 
+export type MagicSymbolString = 
   'W' | 'B' | 'U' | 'R' | 'G' | 
   'W/U' | 'W/B' | 'U/B' | 'U/R' | 'B/R' | 'B/G' | 'R/W' | 'R/G' | 'G/W' | 'G/U' | 
   'W/P' | 'B/P' | 'U/P' | 'R/P' | 'G/P' | 'P' |
@@ -6,7 +6,7 @@ export type SymbolString =
   '11' | '12' | '13' | '14'  | '15'  | '16'  | '17'  | '18'  | '19'  | '20' | '1/2' |
   'Artifact' | 'Creature' | 'Enchantment' | 'Instant' | 'Land' | 'Planeswalker' | 'Sorcery';
 
-export const getClassName = (value: SymbolString): string => {
+export const getClassName = (value: MagicSymbolString): string => {
   switch(value) {
     case 'W':
       return 'ms-w';
