@@ -1,0 +1,32 @@
+import React, { FC } from 'react';
+
+import Symbol from '../../atoms/Symbol';
+
+import styles from './style.scss';
+
+export type ManaColorsProps = {
+  colors: ManaColor[];
+
+  /**
+   * @default 'medium'
+   */
+  size?: 'large' | 'medium' | 'small';
+
+  className?: string;
+}
+
+export type ManaColor = 'W' | 'B' | 'U' | 'R' | 'G';
+
+const ManaColors: FC<ManaColorsProps> = ({ colors, size = 'medium', className = '' }) => {
+  return (
+    <ul className={[styles.manaColorItemList, className].join(' ')}>
+      {
+        colors.map((color: ManaColor) => (
+          <li className={styles.manaColorItem}><Symbol type="cost" value={color} size={size}/></li>
+        ))
+      }
+    </ul>
+  );
+};
+
+export default ManaColors;
