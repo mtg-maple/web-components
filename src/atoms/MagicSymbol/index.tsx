@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 
-import { SymbolString, getClassName } from './symbolString';
+import { MagicSymbolString, getClassName } from './string';
 import styles from './style.scss';
 
-export type SymbolProps = {
-  value: SymbolString;
+export type MagicSymbolProps = {
+  value: MagicSymbolString;
 
   /**
    * Type of the symbol
@@ -25,7 +25,7 @@ export type SymbolProps = {
   size?: 'large' | 'medium' | 'small';
 }
 
-const Symbol: FC<SymbolProps> = ({ value, type = 'cost', color = 'text', size = 'medium'}) => {
+const MagicSymbol: FC<MagicSymbolProps> = ({ value, type = 'cost', color = 'text', size = 'medium'}) => {
   const classNames = [
     styles.mana,
     styles.ms,
@@ -38,4 +38,4 @@ const Symbol: FC<SymbolProps> = ({ value, type = 'cost', color = 'text', size = 
   );
 }
 
-export default Symbol;
+export default MagicSymbol;
