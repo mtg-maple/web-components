@@ -6,3 +6,4 @@ https://mtg-maple.github.io/web-components/
 ```bash
 $ yarn predeploy # build-storybook
 $ yarn deploy # deploy static storybook files to GitHub Pages
+```
