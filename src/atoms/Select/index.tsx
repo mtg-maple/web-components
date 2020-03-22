@@ -2,12 +2,16 @@ import React, { FC } from 'react';
 
 import styles from './style.scss';
 
-type SelectOption = {
+export type SelectOption = {
   label: string;
   value: string;
 }
 
-type SelectProps = {
+export function isSelectOption(arg: any): arg is SelectOption {
+  return typeof arg === 'object' && typeof arg.label === 'string' && typeof arg.value === 'string';
+}
+
+export type SelectProps = {
   options: SelectOption[];
 
   className?: string;
@@ -23,6 +27,16 @@ type SelectProps = {
   onChange?: (e: React.ChangeEvent) => void;
 
   onClick?: (e: React.MouseEvent) => void;
+}
+
+export function isSelectProps(arg: any): arg is SelectProps {
+  return arg !== null &&
+    typeof arg === 'object' &&
+    Array.isArray(arg.options) && arg.options.every(isSelectOption) &&
+    (typeof arg.className === 'undefined' || typeof arg.className === 'string') &&
+    (typeof arg.dir === 'undefined' || arg.dir === 'auto' || arg.dir === 'ltl' || arg.dir === 'rtl') &&
+    (typeof arg.onChange === 'undefined' || typeof arg.onChange === 'function') &&
+    (typeof arg.onClick === 'undefined' || typeof arg.onClick === 'function');
 }
 
 const Select: FC<SelectProps> = ({ options, dir = 'auto', className = '', onChange, onClick }) => {
