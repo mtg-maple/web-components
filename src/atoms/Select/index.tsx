@@ -34,7 +34,7 @@ export function isSelectProps(arg: any): arg is SelectProps {
     typeof arg === 'object' &&
     Array.isArray(arg.options) && arg.options.every(isSelectOption) &&
     (typeof arg.className === 'undefined' || typeof arg.className === 'string') &&
-    (typeof arg.dir === 'undefined' || arg.dir === 'auto' || arg.dir === 'ltl' || arg.dir === 'rtl') &&
+    (typeof arg.dir === 'undefined' || ['auto', 'ltl', 'rtl'].includes(arg.dir)) &&
     (typeof arg.onChange === 'undefined' || typeof arg.onChange === 'function') &&
     (typeof arg.onClick === 'undefined' || typeof arg.onClick === 'function');
 }
