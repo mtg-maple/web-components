@@ -1,0 +1,46 @@
+.cardListItem {
+  list-style: none;
+}
+
+
+.cardListItem .cardListItemLink {
+  display: block;
+}
+
+.cardListItem .cardListItemLink:focus {
+  outline: 0;
+}
+
+.cardListItem .cardListItemLink:not(:disabled):focus {
+  background-color: $color-base-aft;
+  border-radius: $radius;
+  transition: all $hover-animation-timing $hover-animation-duration;
+}
+
+.cardListItemContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cardImage {
+  flex-shrink: 0;
+}
+
+.info {
+  flex-grow: 1;
+  margin-left: calc(#{$space} * 2);
+  display: flex;
+  flex-direction: column;
+  color: $color-text;
+  text-decoration: none;
+}
+
+.moreIcon {
+  flex-shrink: 0;
+  font-size: $font-size-m;
+  line-height: $font-size-m;
+  color: $color-text-mute;
+  margin-left: calc(#{$space} * 2);
+  margin-right: $space;
+}
