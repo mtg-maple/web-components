@@ -1,6 +1,7 @@
 .cardImage {
   object-fit: cover;
   border-radius: $radius;
+  display: block;
 }
 
 .thumbnail {
