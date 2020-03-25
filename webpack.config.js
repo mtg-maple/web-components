@@ -30,7 +30,7 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               prependData: `
-                @import "./src/properties.scss";
+                @import "./scss/properties.scss";
               `,
             }
           },

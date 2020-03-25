@@ -48,7 +48,7 @@ module.exports = ({ config }) => {
         loader: 'sass-loader',
         options: {
           prependData: `
-            @import "${resolve('src/properties.scss')}";
+            @import "${resolve('scss/properties.scss')}";
           `,
         }
       },
