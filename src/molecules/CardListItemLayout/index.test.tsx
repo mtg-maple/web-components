@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { shallow } from 'enzyme';
 
 import CardListItemLayout from '../CardListItemLayout';
@@ -11,7 +11,7 @@ describe('CardListItemLayout',() => {
       alt: 'brazen borrower',
       size: 'thumbnail' as 'thumbnail',
     };
-    const info = (): ReactElement => (
+    const info = (
       <>
         <span>Brazen Borrower</span>
         <span>Description</span>
