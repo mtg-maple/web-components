@@ -1,13 +1,17 @@
 .description {
   width: 100%;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .description.medium {
   font-size: $font-size-m;
+  line-height: $font-size-m;
 }
 
 .description.small {
   font-size: $font-size-s;
+  line-height: $font-size-s;
 }
 
 .description.text {

@@ -8,6 +8,17 @@
   list-style-type: none;
 }
 
-.manaColorItem:nth-child(n+2) {
+.manaColorItem {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+}
+
+.manaColorItem.large:nth-child(n+2) {
   margin-left: $space;
+}
+
+.manaColorItem.medium:nth-child(n+2),
+.manaColorItem.small:nth-child(n+2) {
+  margin-left: calc(#{$space} / 2);
 }

@@ -22,7 +22,7 @@ const ManaColors: FC<ManaColorsProps> = ({ colors, size = 'medium', className = 
     <ul className={[styles.manaColorItemList, className].join(' ')}>
       {
         colors.map((color: ManaColor) => (
-          <li className={styles.manaColorItem}><MagicSymbol type="cost" value={color} size={size}/></li>
+          <li className={[styles.manaColorItem, styles[size]].join(' ')}><MagicSymbol type="cost" value={color} size={size}/></li>
         ))
       }
     </ul>
