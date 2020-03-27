@@ -21,21 +21,24 @@ export interface DescriptionProps {
    * Max line number of the description. Overflow text is omitted with ellipsis.
    */
   maxLine?: number;
+
+  className?: string;
 }
 
-const Description: FC<DescriptionProps> = ({children, size = 'regular', color = 'text', maxLine = 0}) => {
+const Description: FC<DescriptionProps> = ({children, size = 'regular', color = 'text', maxLine = 0, className = ''}) => {
   const inlineStyle = {
     WebkitLineClamp: maxLine,
   };
   return (
   <p
-    className={`
-      ${styles.description}
-      ${styles[size]}
-      ${styles[color]}
-      ${maxLine == 1 ? styles.singleLine : ''}
-      ${maxLine >= 2 ? styles.multipleLine : ''}
-    `}
+    className={[
+      styles.description,
+      styles[size],
+      styles[color],
+      maxLine == 1 ? styles.singleLine : '',
+      maxLine >= 2 ? styles.multipleLine : '',
+      className,
+    ].join(' ')}
     style={maxLine >= 2 ? inlineStyle : {}}
   >{children}</p>
   );
