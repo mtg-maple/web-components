@@ -30,6 +30,7 @@ export * from './atoms/TextButton';
 export { default as UserIcon } from './atoms/UserIcon';
 export * from './atoms/UserIcon';
 
+export * from './atoms/FAIcon';
 
 /* Molecules */
 export { default as Input } from './molecules/Input';
