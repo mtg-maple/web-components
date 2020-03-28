@@ -1,5 +1,6 @@
 .cardListItem {
   list-style: none;
+  padding: 0 calc(#{$space} * 2);
 }
 
 
@@ -13,7 +14,6 @@
 
 .cardListItem .cardListItemLink:not(:disabled):focus {
   background-color: $color-base-aft;
-  border-radius: $radius;
   transition: all $hover-animation-timing $hover-animation-duration;
 }
 
