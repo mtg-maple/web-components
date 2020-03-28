@@ -10,11 +10,12 @@ export type CardListItemLayoutProps = {
   info: ReactElement;
   onClick?: (e: React.MouseEvent) => void;
   showMoreIcon?: boolean;
+  className?: string;
 };
 
-const CardListItemLayout: FC<CardListItemLayoutProps> = ({ cardImageProps, info, onClick, showMoreIcon }) => {
+const CardListItemLayout: FC<CardListItemLayoutProps> = ({ cardImageProps, info, onClick, showMoreIcon, className }) => {
   const listItemContent = (
-    <div className={styles.cardListItemContent}>
+    <div className={[styles.cardListItemContent, className].join(' ')}>
       <CardImage { ...{ ...cardImageProps, className: [cardImageProps.className, styles.cardImage].join(' ') } }/>
         <div className={styles.info}>
           { info }
@@ -26,7 +27,7 @@ const CardListItemLayout: FC<CardListItemLayoutProps> = ({ cardImageProps, info,
     </div>
   );
   return (
-    <li className={styles.cardListItem}>
+    <li className={[styles.cardListItem, className].join(' ')}>
       {
         typeof onClick === 'undefined' ? listItemContent : <a href="#" className={styles.cardListItemLink} onClick={onClick}>{ listItemContent }</a>
       }
